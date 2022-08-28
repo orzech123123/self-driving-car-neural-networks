@@ -13,9 +13,17 @@ class Road{
         this.bottom = infinity;
     }
 
+    getLaneCenter(laneIndex)
+    {
+        const laneWidth = this.width/this.laneCount;
+        
+        return this.left + laneWidth/2+
+        Math.min(laneIndex, this.laneCount-1) * laneWidth;
+    }
+
     draw(context)
     {
-        context.lineWidth = 5;
+        context.lineWidth = 3;
         context.strokeStyle= "white";
 
         for(let i=0; i<=this.laneCount; i++)
@@ -28,8 +36,6 @@ class Road{
 
             if(i > 0 && i < this.laneCount)
             {
-                //context.strokeStyle = 'blue';
-                //context.setColor("red");
                 context.setLineDash([20, 20]);
             }
             else{
