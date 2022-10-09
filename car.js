@@ -15,12 +15,13 @@ class Car{
 
         this.angle = 0.0;
 
+        this.sensor = new Sensor(this);
         this.controls1 = new controls();
-
     }
     
     update(){
         this.#move();
+        this.sensor.update();
     }
 
     #move(){
@@ -89,5 +90,7 @@ class Car{
         context.fill();
         
         context.restore();
+
+        this.sensor.draw(context);
     }
 }
