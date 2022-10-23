@@ -3,8 +3,7 @@ class Car{
     {
         this.x = x;
         this.y = y;
-        this.
-        width = width;
+        this.width = width;
         this.height = height;
 
         this.speed = 0;
